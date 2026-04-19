@@ -32,7 +32,7 @@ Then(
     const profilePage = new ProfilePage(this.page!);
     const headerPage = new HeaderPage(this.page!);
     const actualUSername = await headerPage.getUsername();
-    const actualTitle = await profilePage.getTitle();
+    const actualTitle = await profilePage.verifyOnProfilePage();
     expect(actualUSername).toBe(userNameExpected);
     expect(actualTitle).toBe("Panel Principal");
   },

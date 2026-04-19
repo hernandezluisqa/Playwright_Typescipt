@@ -8,6 +8,7 @@ export class SideBarPage {
   readonly pagoServiciosButton: Locator;
   readonly tarjetaVirtualButton: Locator;
   readonly misDatosButton: Locator;
+  readonly menuItem: Locator;
 
   constructor(page: Page) {
     this.inicioButton = page.locator("//li[@data-view='dashboard']");
@@ -17,6 +18,14 @@ export class SideBarPage {
     this.pagoServiciosButton = page.locator("//li[@data-view='services']");
     this.tarjetaVirtualButton = page.locator("//li[@data-view='cards']");
     this.misDatosButton = page.locator("//li[@data-view='client-data']");
+    this.menuItem = page.locator(".menu-item");
+  }
+
+  async clickMenuItem(name: string) {
+    const menuItem = this.menuItem.filter({ hasText: name });
+    expect(menuItem).toBeVisible();
+    expect(menuItem).toBeEnabled();
+    await menuItem.click();
   }
 
   async clickInicioButton() {

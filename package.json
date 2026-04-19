@@ -6,6 +6,8 @@
   "scripts": {
     "test": "cucumber-js",
     "test:headed": "cucumber-js --headed",
+    "test:tag": "cucumber-js --tags",
+    "test:name": "cucumber-js --name",
     "report": "open cucumber-report.html"
   },
   "keywords": [],
@@ -15,7 +17,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.6.0",
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.6.0",
     "playwright": "^1.58.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
